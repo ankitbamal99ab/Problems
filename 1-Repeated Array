@@ -1,0 +1,19 @@
+static void getrepeated(int arr[])
+    {
+        HashMap <Integer,Integer> hmp=new HashMap<>();
+        for(int i=0;i<arr.length;i++)
+        {
+            if(hmp.containsKey(arr[i])==true)
+            {
+                hmp.put(arr[i],hmp.get(arr[i])+1);
+            }else
+                {
+                    hmp.put(arr[i],1);
+                }
+        }
+        System.out.println(hmp);
+        for(int key:hmp.keySet())
+        {
+            if(hmp.get(key)>1)
+                System.out.print(key+" ");
+        }
