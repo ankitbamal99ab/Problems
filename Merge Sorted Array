@@ -1,0 +1,33 @@
+static void merge(int arr[],int arr1[])
+    {
+        HashMap<Integer,Boolean> hmp=new HashMap<>();
+        for(int i=0;i<arr.length;i++)
+            hmp.put(arr[i],true);
+
+        for(int i=0;i<arr1.length;i++)
+            hmp.put(arr1[i],true);
+
+
+
+        for(int key: hmp.keySet())
+        {
+            System.out.print(key+" ");
+        }
+    }
+
+--------------------------
+ public static void merge(int arr[],int arr1[])
+    {
+        int m=arr.length;
+        int n=arr1.length;
+        int res[]=new int[m+n];
+        int i=0;
+        int j=0;
+        int k=0;
+        while(i<m && j<n)
+        {
+                if(arr[i]<arr1[j])
+                res[k++]=arr[i++];
+                else
+                res[k++]=arr1[j++];
+        }
